@@ -38,7 +38,7 @@ export const MenuAuthComponent = () => {
             onSubmit={(e) =>
               handleSubmitDataRegister(
                 e,
-                "http://localhost:3000/api/v1/register"
+                "https://tu-backend.onrender.com/api/v1/register"
               )
             }
           >

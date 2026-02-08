@@ -79,7 +79,7 @@ export const useMenuAuthHook = () => {
       if (token) {
         try {
           const response = await fetch(
-            "http://localhost:3000/api/v1/verify-token",
+            "https://tu-backend.onrender.com/api/v1/verify-token",
             {
               method: "POST",
               headers: {
@@ -107,7 +107,7 @@ export const useMenuAuthHook = () => {
       if (token) {
         try {
           const response = await fetch(
-            "http://localhost:3000/api/v1/refresh-token",
+            "https://tu-backend.onrender.com/api/v1/refresh-token",
             {
               method: "POST",
               headers: {
