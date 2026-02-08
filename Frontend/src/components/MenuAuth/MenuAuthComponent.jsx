@@ -83,7 +83,7 @@ export const MenuAuthComponent = () => {
             className="form__menu__auth"
             method="POST"
             onSubmit={(e) =>
-              handleSubmitData(e, "http://localhost:3000/api/v1/login")
+              handleSubmitData(e, `${API}/api/v1/login`)
             }
           >
             <div className="container__menu__auth__form">

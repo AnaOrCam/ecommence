@@ -49,7 +49,7 @@ app.use(morgan("dev"));
 app.use(express.json()); // Solo esta línea es suficiente para parsear JSON
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: "*",
   credentials: true,
 }));
  // Permite que los requests se envíen desde cualquier origen

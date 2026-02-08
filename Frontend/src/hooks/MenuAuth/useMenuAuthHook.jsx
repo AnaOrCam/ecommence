@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+const API = import.meta.env.VITE_API_URL;
 
 export const useMenuAuthHook = () => {
   const [isOpenMenuAuth, setIsOpenMenuAuth] = useState(false);
@@ -31,7 +32,7 @@ export const useMenuAuthHook = () => {
     const userData = { email, password };
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/login", {
+      const response = await fetch(`${API}/api/v1/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -79,7 +80,7 @@ export const useMenuAuthHook = () => {
       if (token) {
         try {
           const response = await fetch(
-            "https://tu-backend.onrender.com/api/v1/verify-token",
+            `${API}/api/v1/verify-token`,
             {
               method: "POST",
               headers: {
@@ -107,7 +108,7 @@ export const useMenuAuthHook = () => {
       if (token) {
         try {
           const response = await fetch(
-            "https://tu-backend.onrender.com/api/v1/refresh-token",
+            `${API}/api/v1/refresh-token`,
             {
               method: "POST",
               headers: {
