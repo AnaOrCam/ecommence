@@ -47,7 +47,6 @@ const app = express();
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json()); // Solo esta línea es suficiente para parsear JSON
-import cors from "cors";
 
 app.use(cors({
   origin: process.env.FRONTEND_URL,
