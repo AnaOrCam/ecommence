@@ -47,13 +47,13 @@ const app = express();
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json()); // Solo esta línea es suficiente para parsear JSON
-app.use(cors(
-  {
-    //Ruta de acceso a la aplicación
-    origin: `http://localhost:${process.env.PORT_FRONTEND} || http://localhost:3000`,
-    credentials: true,
-  }
-)); // Permite que los requests se envíen desde cualquier origen
+import cors from "cors";
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+}));
+ // Permite que los requests se envíen desde cualquier origen
 
 // Guardar token en cookie
 app.use(cookieParser());
